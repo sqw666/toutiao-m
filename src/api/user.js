@@ -34,3 +34,24 @@ export const getUserChannels = () => {
         // }
     })
 }
+export const addFollow = userId => {
+    return request({
+        method: 'POST',
+        url: '/app/v1_0/user/followings',
+        data: {
+            target: userId
+        }
+        // headers: {
+        //     Authorization: `Bearer ${store.state.user.token}`
+        // }
+    })
+}
+export const deleteFollow = userId => {
+    return request({
+        method: 'DELETE',
+        url: `/app/v1_0/user/followings/${userId}`,
+        // headers: {
+        //     Authorization: `Bearer ${store.state.user.token}`
+        // }
+    })
+}

@@ -16,3 +16,6 @@ dayjs.locale('zh-cn')
 Vue.filter('relativeTime', value => {
     return dayjs(value).from(dayjs())
 })
+Vue.filter('datetime', (value, format = 'YY-MM-DD') => {
+    return dayjs(value).format(format)
+})
